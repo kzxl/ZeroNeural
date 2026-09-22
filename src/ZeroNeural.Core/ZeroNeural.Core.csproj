@@ -8,10 +8,7 @@
     <PackageTags>deep-learning;neural-network;autograd;backpropagation;pytorch;linear-algebra;high-performance</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition="Exists('..\..\..\ZeroTensor\src\ZeroTensor.Core\ZeroTensor.Core.csproj')">
-    <ProjectReference Include="..\..\..\ZeroTensor\src\ZeroTensor.Core\ZeroTensor.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup Condition="!Exists('..\..\..\ZeroTensor\src\ZeroTensor.Core\ZeroTensor.Core.csproj')">
+  <ItemGroup>
     <PackageReference Include="ZeroTensor.Core" Version="1.0.0" />
   </ItemGroup>
 
