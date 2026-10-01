@@ -137,10 +137,11 @@ namespace ZeroNeural.Core.nn
 
         public override Variable Forward(Variable input)
         {
-            var mean = input.Mean(axis: -1, keepDims: true);
+            int featureAxis = input.Rank - 1;
+            var mean = input.Mean(axis: featureAxis, keepDims: true);
             var diff = input - mean;
             var sqDiff = diff * diff;
-            var var = sqDiff.Mean(axis: -1, keepDims: true);
+            var var = sqDiff.Mean(axis: featureAxis, keepDims: true);
 
             // invStd = 1 / sqrt(var + eps)
             var varEps = var + Eps;
